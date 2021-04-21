@@ -1,0 +1,142 @@
+html {
+  height: 100%;
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: $secondaryFont;
+  line-height: 1.6;
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $primaryFont;
+}
+
+h2 {
+  font-size: 2.25rem;
+  color: $tomato;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $navy;
+}
+
+h4 {
+  margin: 0;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: $navy;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 85rem;
+  margin: 0 auto;
+
+  &-pall {
+    padding: 4.5rem;
+
+    @include breakpoint-down(medium) {
+      padding: 3rem;
+    }
+  }
+
+  &-plr {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  &-ptb {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+
+    @include breakpoint-down(medium) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+  &-text {
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+}
+
+//Flexbox
+
+.flex {
+  display: flex;
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+button,
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+//Visibility
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

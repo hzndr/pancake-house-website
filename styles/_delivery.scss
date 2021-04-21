@@ -1,0 +1,35 @@
+.delivery {
+  text-align: center;
+  position: relative;
+
+  &::before {
+    @include blurry-bg;
+  }
+
+  &__text {
+    margin-bottom: 3rem;
+  }
+
+  &__logos {
+    > a {
+      display: block;
+      height: 4rem;
+      width: 8rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin: 1rem;
+      box-shadow: $boxShadowLight;
+      transition: transform 300ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      div {
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+      }
+    }
+  }
+}

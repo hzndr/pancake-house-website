@@ -1,0 +1,39 @@
+.footer {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.875rem;
+
+  @include breakpoint-down(medium) {
+    flex-direction: column;
+  }
+
+  &__links {
+    flex-shrink: 1;
+    text-align: center;
+    > a {
+      padding: 0.5rem;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        color: $tomato;
+      }
+
+      @include breakpoint-down(medium) {
+        display: block;
+      }
+    }
+  }
+
+  &__credits {
+    padding: 0.5rem 0;
+    a {
+      font-weight: 800;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        color: $tomato;
+      }
+    }
+  }
+}

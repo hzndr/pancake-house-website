@@ -1,0 +1,159 @@
+.header {
+  position: fixed;
+  z-index: 1;
+  background-color: $white;
+  box-shadow: $boxShadowLight;
+  width: 100%;
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 4.8125rem;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-image: linear-gradient($sand, transparent);
+  }
+
+  &.open {
+    .header__btnHamburger {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__logo {
+    img {
+      display: block;
+      width: 4.5rem;
+      height: auto;
+    }
+  }
+
+  &__btnHamburger {
+    background-color: $white;
+    > span {
+      display: block;
+      width: 1.625rem;
+      height: 0.1875rem;
+      background-color: $navy;
+      transition: all 300ms ease-in-out;
+      transform-origin: 4px 2px;
+
+      &:not(:last-child) {
+        margin-bottom: 0.1875rem;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__links {
+    a {
+      display: inline-block;
+      position: relative;
+      transition: color 250ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        transition: background-color 250ms ease-in-out;
+      }
+
+      &:hover {
+        color: $tomato;
+
+        &::before {
+          background-color: $tomato;
+        }
+      }
+    }
+  }
+
+  &__sm {
+    a {
+      display: inline-block;
+      color: $white;
+      background-color: $navy;
+      border-radius: 50%;
+      width: 1.7rem;
+      height: 1.7rem;
+      position: relative;
+      font-size: 0.875rem;
+      transition: all 350ms ease-in-out;
+
+      &:hover {
+        background-color: $tomato;
+      }
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: calc(100% - 5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+
+    a {
+      display: block;
+      padding: 1rem;
+      color: $navy;
+      text-align: center;
+
+      &:hover,
+      &:focus {
+        color: $tomato;
+      }
+    }
+
+    div {
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      > a {
+        display: inline;
+        padding: 0 1.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+//640px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40rem",
+  "large": "64rem",
+  "xlarge": "87.5rem",
+);
+//639px, 1023px, 1399px
+$breakpoints-down: (
+  "small": "39.9375rem",
+  "medium": "63.9375rem",
+  "large": "87.4375rem",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+// Blurry background
+@mixin blurry-bg {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: radial-gradient(
+      circle at 20% 80%,
+      $blueTransparent 11%,
+      transparent 11%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      $lightPinkTransparent 10%,
+      transparent 10%
+    ),
+    radial-gradient(circle at 70% 70%, $sandTransparent 10%, transparent 10%);
+  filter: blur(3.5rem);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}

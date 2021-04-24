@@ -32,11 +32,8 @@
 
     &:hover {
       transform: scale(1.05);
-
-      > h3 {
+      h3 {
         font-size: 1.6875rem;
-        color: $white;
-        background: none;
       }
     }
 
@@ -56,8 +53,8 @@
       right: 0;
       padding: 1rem 0;
       margin-bottom: 0;
-      background-image: linear-gradient(45deg, #ffdadac4, #ffffffb8);
-      color: $navy;
+      background-image: linear-gradient(to top, $navyTransparent, transparent);
+      color: $white;
       transition: all 350ms ease-in-out;
     }
   }

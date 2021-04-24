@@ -12,7 +12,7 @@
     right: 0px;
     left: 0px;
     bottom: 0px;
-    background-image: linear-gradient($sand, transparent);
+    background-image: linear-gradient($navy, transparent);
   }
 
   &.open {
@@ -139,6 +139,7 @@
       padding: 1rem;
       color: $navy;
       text-align: center;
+      transition: all 200ms ease-in-out;
 
       &:hover,
       &:focus {
